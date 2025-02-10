@@ -22,6 +22,7 @@
     "ioredis": "^5.5.0",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
+    "nodemailer": "^6.10.0",
     "prisma": "^6.3.1"
   },
   "devDependencies": {
@@ -31,6 +32,7 @@
     "@types/jsonwebtoken": "^9.0.8",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.13.1",
+    "@types/nodemailer": "^6.4.17",
     "jsdoc": "^4.0.4",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
