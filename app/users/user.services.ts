@@ -2,10 +2,7 @@ import { hashSync } from "bcrypt";
 import bcrypt from "bcrypt";
 import { prismaClient } from "..";
 import { Iuser } from "./user.dto";
-import {
-  generateAccessToken,
-  generateRefreshToken,
-} from "../common/helper/token.helper";
+import { generateAccessToken , generateRefreshToken} from "../common/helper/token.helper";
 
 export const createuser = async (value: Iuser) => {
   const { name, email, password } = value;
