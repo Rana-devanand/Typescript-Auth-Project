@@ -1,12 +1,13 @@
 import { Router } from "express";
-import { signup } from "./user.controllers";
+import * as usercontroller from "./user.controllers";
+import * as uservalidator from "./user.validation";
+import { catchError } from "../common/middleware/catch.error.middleware";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.status(200).send({ message: "Welcome to the User API!" });
-});
-router.post("/create", signup);
+router
+      .post("/", uservalidator.createUser, catchError, usercontroller.signup)
+      .post("/login",uservalidator.loggedIn , catchError , usercontroller.login);
 
+// TODO: Add other API routes
 export default router;
-  

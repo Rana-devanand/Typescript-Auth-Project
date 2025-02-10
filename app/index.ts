@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import { PORT } from "./common/helper/config.helper";
 const app: Express = express();
-import router from "./users/user.routes";
+import subroutes from "./routes/subroutes";
 import { PrismaClient } from "@prisma/client";
 import morgan from "morgan";
 import bodyParser from "body-parser";
@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 // set base path to /api
-app.use("/api", router);
+app.use("/api", subroutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
