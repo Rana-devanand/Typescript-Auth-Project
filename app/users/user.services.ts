@@ -58,3 +58,7 @@ export const login = async (user: Iuser) => {
 
   return { ...foundUser, accesstoken, refreshtoken };
 };
+
+export const getAllUsers = async () => {
+  return await prismaClient.user.findMany();
+}
